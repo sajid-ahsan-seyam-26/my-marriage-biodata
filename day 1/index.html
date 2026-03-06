@@ -1,243 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CONFIDENTIAL MATRIMONIAL BIODATA</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CONFIDENTIAL MATRIMONIAL BIODATA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English+SC&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-:root{
-    --bg:#050505;
-    --paper:#bfae9a;
-    --ink:#111;
-    --blood:#6b0000;
-}
+    <style>
+      :root {
+        --bg: #050505;
+        --paper: #bfae9a;
+        --ink: #111;
+        --blood: #6b0000;
+      }
 
-body{
-    background:var(--bg);
-    margin:0;
-    font-family:'Special Elite',serif;
-    overflow-x:hidden;
-}
+      body {
+        background: var(--bg);
+        margin: 0;
+        font-family: "Special Elite", serif;
+        overflow-x: hidden;
+      }
 
-/* Grain */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:url("https://www.transparenttextures.com/patterns/noise.png");
-    opacity:.25;
-    pointer-events:none;
-    z-index:999;
-}
+      /* Grain */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url("https://www.transparenttextures.com/patterns/noise.png");
+        opacity: 0.25;
+        pointer-events: none;
+        z-index: 999;
+      }
 
-/* Vignette */
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:radial-gradient(circle,transparent 20%,black 120%);
-    pointer-events:none;
-    z-index:998;
-}
+      /* Vignette */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle, transparent 20%, black 120%);
+        pointer-events: none;
+        z-index: 998;
+      }
 
-.case-file{
-    max-width:900px;
-    margin:60px auto;
-    background:var(--paper);
-    padding:60px;
-    box-shadow:0 0 50px black;
-    border:1px solid #7a6a5c;
-    transform:rotate(-1deg);
-    animation:paper-float 6s infinite alternate;
-    position:relative;
-}
+      .case-file {
+        max-width: 900px;
+        margin: 60px auto;
+        background: var(--paper);
+        padding: 60px;
+        box-shadow: 0 0 50px black;
+        border: 1px solid #7a6a5c;
+        transform: rotate(-1deg);
+        animation: paper-float 6s infinite alternate;
+        position: relative;
+      }
 
-@keyframes paper-float{
-    from{transform:rotate(-1deg);}
-    to{transform:rotate(1deg);}
-}
+      @keyframes paper-float {
+        from {
+          transform: rotate(-1deg);
+        }
+        to {
+          transform: rotate(1deg);
+        }
+      }
 
-/* BLOOD STAMP */
-.case-file::before{
-    content:"FOR MATRIMONIAL PURPOSE ONLY";
-    position:absolute;
-    top:20px;
-    right:20px;
-    border:3px solid var(--blood);
-    color:var(--blood);
-    padding:6px 10px;
-    font-weight:bold;
-    opacity:.45;
-    transform:rotate(15deg);
-}
+      /* BLOOD STAMP */
+      .case-file::before {
+        content: "FOR MATRIMONIAL PURPOSE ONLY";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: 3px solid var(--blood);
+        color: var(--blood);
+        padding: 6px 10px;
+        font-weight: bold;
+        opacity: 0.45;
+        transform: rotate(15deg);
+      }
 
-/* Flicker */
-/* Soft cinematic flicker (NO lightning) */
-.flicker{
-    animation:softFlicker 8s infinite ease-in-out;
-}
+      /* Flicker */
+      /* Soft cinematic flicker (NO lightning) */
+      .flicker {
+        animation: softFlicker 8s infinite ease-in-out;
+      }
 
-@keyframes softFlicker{
-    0%, 100% { opacity: 1; }
-    45% { opacity: 0.9; }
-    50% { opacity: 0.85; }
-    55% { opacity: 0.9; }
-}
+      @keyframes softFlicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        45% {
+          opacity: 0.9;
+        }
+        50% {
+          opacity: 0.85;
+        }
+        55% {
+          opacity: 0.9;
+        }
+      }
 
-h1,h2{
-    font-family:'IM Fell English SC',serif;
-    color:var(--blood);
-    text-transform:uppercase;
-}
+      h1,
+      h2 {
+        font-family: "IM Fell English SC", serif;
+        color: var(--blood);
+        text-transform: uppercase;
+      }
 
-.header{
-    border-bottom:2px solid #333;
-    margin-bottom:30px;
-}
+      .header {
+        border-bottom: 2px solid #333;
+        margin-bottom: 30px;
+      }
 
-.photo{
-    width:180px;
-    height:220px;
-    float:right;
-    margin-left:30px;
-    border:6px solid #fff;
-    box-shadow:0 0 15px rgba(0,0,0,.7);
-    background:#000;
-    overflow:hidden;
-}
+      .photo {
+        width: 180px;
+        height: 220px;
+        float: right;
+        margin-left: 30px;
+        border: 6px solid #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        background: #000;
+        overflow: hidden;
+      }
 
-.photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter: none;   /* 👈 original color */
-    transition: 0.3s ease;
-}
-.photo img:hover{
-    filter: sepia(1) contrast(1.3) brightness(.9);
-}
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: none; /* 👈 original color */
+        transition: 0.3s ease;
+      }
+      .photo img:hover {
+        filter: sepia(1) contrast(1.3) brightness(0.9);
+      }
 
-.info p{
-    margin:8px 0;
-}
+      .info p {
+        margin: 8px 0;
+      }
 
-.section{
-    margin-top:40px;
-}
+      .section {
+        margin-top: 40px;
+      }
 
-/* Glitch Text */
-.glitch{
-    position:relative;
-}
-.glitch::after{
-    content:attr(data-text);
-    position:absolute;
-    left:1px;
-    top:0;
-    color:var(--blood);
-    opacity:.2;
-    animation:glitch 6s infinite;
-}
+      /* Glitch Text */
+      .glitch {
+        position: relative;
+      }
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 1px;
+        top: 0;
+        color: var(--blood);
+        opacity: 0.2;
+        animation: glitch 6s infinite;
+      }
 
-@keyframes glitch{
-    0%{transform:translate(0);}
-    20%{transform:translate(-1px,1px);}
-    40%{transform:translate(1px,-1px);}
-    60%{transform:translate(-1px,0);}
-    80%{transform:translate(1px,1px);}
-}
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-1px, 1px);
+        }
+        40% {
+          transform: translate(1px, -1px);
+        }
+        60% {
+          transform: translate(-1px, 0);
+        }
+        80% {
+          transform: translate(1px, 1px);
+        }
+      }
 
-footer{
-    text-align:center;
-    font-size:12px;
-    opacity:.6;
-    padding:40px;
-}
-</style>
-</head>
+      footer {
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.6;
+        padding: 40px;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
+    <div class="case-file">
+      <div class="header">
+        <h1 class="flicker">Marriage Biodata</h1>
+        <p class="glitch" data-text="Confidential Document">
+          Confidential Document
+        </p>
+      </div>
 
-<div class="case-file">
+      <div class="photo">
+        <img src="seyam.jpeg" alt="Profile Photo" />
+      </div>
 
-<div class="header">
-<h1 class="flicker">Marriage Biodata</h1>
-<p class="glitch" data-text="Confidential Document">Confidential Document</p>
-</div>
+      <div class="info">
+        <p><strong>Name:</strong> Sajid Ahsan Seyam</p>
+        <p><strong>Date of Birth:</strong> 29/10/2001</p>
+        <p><strong>Age:</strong> 24 Years</p>
+        <p><strong>Height:</strong> 5 Feet 11 Inches</p>
+        <p><strong>Religion:</strong> Islam</p>
+        <p><strong>Nationality:</strong> Bangladeshi</p>
+        <p><strong>Marital Status:</strong> Never Married</p>
+      </div>
 
-<div class="photo">
-    <img src="seyam.jpg" alt="Profile Photo">
-</div>
+      <div style="clear: both"></div>
 
+      <div class="section">
+        <h2 class="flicker">Education</h2>
+        <p>B.Sc. in Computer Science & Engineering</p>
+        <p>American International University–Bangladesh</p>
+        <p>Graduation Year: 2026</p>
+      </div>
 
-<div class="info">
-<p><strong>Name:</strong> Sajid Ahsan Seyam</p>
-<p><strong>Date of Birth:</strong> 29/10/2001</p>
-<p><strong>Age:</strong> 24 Years</p>
-<p><strong>Height:</strong> 5 Feet 11 Inches</p>
-<p><strong>Religion:</strong> Islam</p>
-<p><strong>Nationality:</strong> Bangladeshi</p>
-<p><strong>Marital Status:</strong> Never Married</p>
-</div>
+      <div class="section">
+        <h2 class="flicker">Profession</h2>
+        <p>Software Engineer Intern</p>
+      </div>
 
-<div style="clear:both;"></div>
+      <div class="section">
+        <h2 class="flicker">Family Background</h2>
+        <p>
+          Father: [Md Ahsan Habib] – [Assistant Professor, Department of
+          Mathematics Cantonment Public School and College Mymensingh]
+        </p>
+        <p>
+          Mother: [Shahanaj Begum Lipy ] – [Head Teacher Gondropa Government
+          Primary School Mymensingh]
+        </p>
+        <p>Brother:[Md Byazid Ahsan Sabik]-[student]</p>
+        <p>Home District: Mymensingh</p>
+      </div>
 
-<div class="section">
-<h2 class="flicker">Education</h2>
-<p>B.Sc. in Computer Science & Engineering</p>
-<p>American International University–Bangladesh</p>
-<p>Graduation Year: 2026</p>
-</div>
+      <div class="section">
+        <h2 class="flicker">Personal Traits</h2>
+        <p>Responsible, calm, honest, family-oriented</p>
+        <p>Non-smoker, non-drinker</p>
+      </div>
 
-<div class="section">
-<h2 class="flicker">Profession</h2>
-<p>Computer Science Student</p>
-<p>Software Engineer </p>
-<p>Data Analyst</p>
-</div>
+      <div class="section">
+        <h2 class="flicker">Contact</h2>
+        <p>Phone: 01712155351</p>
+        <p>Phone[Father]:01673895208</p>
+        <p>Email: mdsajidahsanseyam26@gmail.com</p>
+      </div>
+    </div>
 
-<div class="section">
-<h2 class="flicker">Family Background</h2>
-<p>Father: [Md Ahsan Habib] – [Assistant Professor, Department of Mathematics
-Cantonment Public School and College Mymensingh]</p>
-<p>Mother: [Shahanaj Begum Lipy ] – [Head Teacher
-Gondropa Government Primary School Mymensingh]</p>
-<p>Brother:[Md Byazid Ahsan Sabik]-[student]</p>
-<p>Home District: Mymensingh</p>
-</div>
+    <footer class="flicker">
+      © Prepared sincerely for matrimonial consideration
+    </footer>
 
-<div class="section">
-<h2 class="flicker">Personal Traits</h2>
-<p>Responsible, calm, honest, family-oriented</p>
-<p>Non-smoker, non-drinker</p>
-</div>
-
-<div class="section">
-<h2 class="flicker">Contact</h2>
-<p>Phone: 01712155351</p>
-<p>Phone[Father]:01673895208</p>
-<p>Email: mdsajidahsanseyam26@gmail.com</p>
-</div>
-
-</div>
-
-<footer class="flicker">
-© Prepared sincerely for matrimonial consideration
-</footer>
-
-<script>
-/* Random screen glitch */
-window.addEventListener("scroll",()=>{
-    if(Math.random() > 0.995){
-        document.body.style.filter = "contrast(1.1)";
-        setTimeout(()=>{
+    <script>
+      /* Random screen glitch */
+      window.addEventListener("scroll", () => {
+        if (Math.random() > 0.995) {
+          document.body.style.filter = "contrast(1.1)";
+          setTimeout(() => {
             document.body.style.filter = "none";
-        }, 120);
-    }
-});
-</script>
-
-</body>
+          }, 120);
+        }
+      });
+    </script>
+  </body>
 </html>
